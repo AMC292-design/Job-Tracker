@@ -32,10 +32,12 @@ Once you submit the entry, you can update or delete the job entry.
 The Landing Page is also accessible via a link from the main page where logout is hosted. 
 
 Dependencies:
+
 Use a web browser, preferably Google ChromeOS.
 Not Mobile compatible.
 
 Technologies:
+
 Vscode
 JavaScript
 HTML
