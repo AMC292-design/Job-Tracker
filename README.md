@@ -31,11 +31,13 @@ add job entries such as Name of Job, Position Applied, and Job Status. Please fe
 Once you submit the entry, you can update or delete the job entry.
 The Landing Page is also accessible via a link from the main page where logout is hosted. 
 
+
 Dependencies:
 
 Use a web browser, preferably Google ChromeOS.
 
 Not Mobile compatible.
+
 
 Technologies:
 
@@ -51,6 +53,7 @@ MongoDB
 
 Full CRUD 
 
+
 Next Steps (Future Endeavors):
 
 Add more statuses for the drop-down feature on Job Status
@@ -58,6 +61,7 @@ Add more statuses for the drop-down feature on Job Status
 Create a rearrangement of the order of the web pages
 
 Add a profile user page for more personalization 
+
 
 Authors:
 
