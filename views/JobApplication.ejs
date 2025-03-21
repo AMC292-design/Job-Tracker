@@ -1,5 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application</title>
+    <style>
+        body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f3f4f6;
+    font-family: Arial, sans-serif;
+}
 
-          
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
+h2, h3 {
+    text-align: center;
+    color: #333;
+}
 
- 
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, select {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #1e40af;
+}
+
+.summary {
+    margin-top: 20px;
+    padding: 10px;
+    background: #f9fafb;
+    border-radius: 5px;
+}
+
+.application {
+    background: white;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.application button {
+    margin-right: 5px;
+}
+
+.application form {
+    display: inline;
+}
+
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <h2>Job Application</h2>
+
+        <form id="jobForm" action="/submit" method="POST">
+            <input type="hidden" name="id" id="jobId">
+
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required>
+
+            <label for="position">Position Applied</label>
+            <input type="text" name="position" id="position" required>
+
+            <label for="status">Job Status</label>
+            <select name="status" id="status">
+                <option value="interview">Interviewed</option>
+                <option value="gotJob">Got the Job</option>
+            </select>
+
+            <button type="submit">Submit</button>
+            <a href="/">back to landing Page</a>
+        </form>
+
+        <% if (applications.length > 0) { %>
+            <div class="summary">
+                <h3>Application Summary</h3>
+                <% applications.forEach((app) => { %>
+                    <div class="application">
+                        <p><strong>Name:</strong> <%= app.name %></p>
+                        <p><strong>Position:</strong> <%= app.position %></p>
+                        <p><strong>Status:</strong> <%= app.status === 'gotJob' ? "🎉 Got the Job!" : "📝 Interviewed" %></p>
+
+                        <button onclick="editApplication('<%= app.id %>', '<%= app.name %>', '<%= app.position %>', '<%= app.status %>')">
+                            Update
+                        </button>
+
+                        <form action="/delete" method="POST">
+                            <input type="hidden" name="id" value="<%= app.id %>">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </div>
+                <% }) %>
+            </div>
+        <% } %>
+    </div>
+
+    <script>
+        function editApplication(id, name, position, status) {
+            document.getElementById("jobId").value = id;
+            document.getElementById("name").value = name;
+            document.getElementById("position").value = position;
+            document.getElementById("status").value = status;
+        }
+    </script>
+</body>
+</html>

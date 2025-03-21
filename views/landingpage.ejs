@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our Platform</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: whitesmoke;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        
+        .navbar {
+            background-color: skyblue;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #003366;
+        }
+
+        .auth-buttons a {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            margin-left: 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .login-btn {
+            color: skyblue;
+            background-color: white;
+        }
+
+        .signup-btn {
+            color: white;
+            background-color: #003366;
+            border: 2px solid white;
+        }
+
+        .login-btn:hover {
+            background-color: #f0f0f0;
+        }
+
+        .signup-btn:hover {
+            background-color: #004080;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, skyblue 0%, #66b3ff 100%);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: skyblue;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #003366;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            background-color: whitesmoke;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #003366;
+            font-size: 2.2rem;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            flex: 1 1 300px;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: skyblue;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            margin-bottom: 1rem;
+            color: #003366;
+        }
+
+       
+        .testimonials {
+            background-color: #f0f8ff;
+            padding: 5rem 2rem;
+        }
+
+        .testimonial-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            flex: 1 1 300px;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .testimonial-quote {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: skyblue;
+            margin-right: 1rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            color: #003366;
+        }
+
+        .author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+       
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            flex: 1 1 250px;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-column a {
+            color: #a3d8ff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+       
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .logo {
+                margin-bottom: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+                margin-left: 0;
+            }
+
+            .auth-buttons {
+                margin-top: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+
+<nav class="navbar">
+  <div class="logo">JobTracker</div>
+  <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="/login">login</a></li>
+      <li><a href="/signup">signup</a></li>
+  </ul>
+</nav>
+
+
+<section class="hero">
+  <h1>Welcome to JobTracker</h1>
+  <p>Your all-in-one solution to track, manage, and update your job applications efficiently.</p>
+</section>
+
+
+<section id="about" class="about">
+  <h2 class="section-title">About JobTracker</h2>
+  <div class="features">
+      <div class="feature-card">
+          <div class="feature-icon">📌</div>
+          <h3 class="feature-title">Track Your Jobs</h3>
+          <p>Keep a record of all job applications, from applied to interview stages.</p>
+      </div>
+      <div class="feature-card">
+          <div class="feature-icon">🔄</div>
+          <h3 class="feature-title">Update Applications</h3>
+          <p>Edit and update job application statuses as you progress.</p>
+      </div>
+      <div class="feature-card">
+          <div class="feature-icon">❌</div>
+          <h3 class="feature-title">Remove Listings</h3>
+          <p>Delete jobs you are no longer interested in to keep your dashboard organized.</p>
+      </div>
+  </div>
+</section>
+
+
+<section id="testimonials" class="testimonials">
+  <h2 class="section-title">What Users Say</h2>
+  <div class="testimonial-container">
+      <div class="testimonial-card">
+          <p class="testimonial-quote">"JobTracker has made my job search seamless! I love the update and delete features."</p>
+          <div class="testimonial-author">
+              <div class="author-avatar">AC</div>
+              <div class="author-info">
+                  <h4>Alice Cooper</h4>
+                  <p>Software Engineer</p>
+              </div>
+          </div>
+      </div>
+      <div class="testimonial-card">
+          <p class="testimonial-quote">"Finally, a tool that keeps all my job applications in one place. Highly recommended!"</p>
+          <div class="testimonial-author">
+              <div class="author-avatar">BM</div>
+              <div class="author-info">
+                  <h4>Brian Miller</h4>
+                  <p>Marketing Specialist</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="footer-content">
+      <div class="footer-column">
+          <h3>JobTracker</h3>
+          <p>Helping job seekers stay organized since 2025.</p>
+      </div>
+      <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h3>Contact Us</h3>
+          <ul>
+              <li>Email: support@jobtracker.com</li>
+              <li>Phone: (123) 456-7890</li>
+          </ul>
+      </div>
+  </div>
+  <div class="copyright">
+      <p>&copy; 2025 JobTracker. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
