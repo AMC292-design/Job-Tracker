@@ -54,7 +54,9 @@ Full CRUD
 Next Steps (Future Endeavors):
 
 Add more statuses for the drop-down feature on Job Status
+
 Create a rearrangement of the order of the web pages
+
 Add a profile user page for more personalization 
 
 Authors:
