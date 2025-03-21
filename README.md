@@ -34,15 +34,21 @@ The Landing Page is also accessible via a link from the main page where logout i
 Dependencies:
 
 Use a web browser, preferably Google ChromeOS.
+
 Not Mobile compatible.
 
 Technologies:
 
 Vscode
+
 JavaScript
+
 HTML
+
 CSS
+
 MongoDB
+
 Full CRUD 
 
 Next Steps (Future Endeavors):
