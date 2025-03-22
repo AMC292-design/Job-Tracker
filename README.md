@@ -38,6 +38,8 @@ CSS
 
 MongoDB
 
+Node
+
 Full CRUD
 
 Next Steps (Future Endeavors):
